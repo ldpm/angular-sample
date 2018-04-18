@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="js/photos.js"></script>
   <meta charset="UTF-8">
   <title>Super Fun Demo Page</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
@@ -14,8 +16,6 @@
 
   
 </head>
-
-<body>
 
   <body class="app-allow-hover"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;"><defs>
 <symbol id="svg-arrow-back" viewBox="0 0 32 32">
@@ -561,7 +561,18 @@
 					<div class="mdc-layout-grid">
 						<div class="mdc-layout-grid__inner">
 							<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9">
+
+
+
                                 <P>Hello, world!</P>
+                                    <div ng-app="demo" ng-controller="Photos">
+                                        <ul>
+                                            <li ng-repeat="x in photos">{{ x.title }}<br/>
+                                            <img src="{{ x.thumbnailUrl }}"</li>
+                                        </ul>
+                                    </div>
+
+
 								<div class="books">
 									<div class="mdc-card book">
 										<a class="mdc-card__primary-action" href="/app/topics/cv">
