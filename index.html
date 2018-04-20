@@ -3,7 +3,7 @@
 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    <script src="js/photos.js"></script>
+  <script src="js/photos.js"></script>
   <meta charset="UTF-8">
   <title>Super Fun Demo Page</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
@@ -13,6 +13,7 @@
 <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css'>
 
       <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/demo.css">
 
   
 </head>
@@ -565,20 +566,12 @@
 
 
                                 <P>Hello, world!</P>
-                                    <div ng-app="demo" ng-controller="Photos">
-                                        <ul>
-                                            <li ng-repeat="x in photos">{{ x.title }}<br/>
-                                            <img src="{{ x.thumbnailUrl }}"</li>
-                                        </ul>
-                                    </div>
-
-
-								<div class="books">
-									<div class="mdc-card book">
+                                    <div ng-app="demo" ng-controller="Photos" class="books">
+									<div ng-repeat="x in photos" class="mdc-card book">
 										<a class="mdc-card__primary-action" href="/app/topics/cv">
-											<div class="mdc-card__media mdc-card__media--16-9 cv-image"></div>
+											<div class="mdc-card__media mdc-card__media--16-9" style="background-image: url({{ x.Image.src }})"></div>
 											<div class="book--content">
-												<h2 class="truncate book--title">Cardiovascular Medicine</h2>
+												<h2 class="truncate book--title">{{ x.title }}</h2>
 											</div>
 										</a>
 										<div class="mdc-card__actions">
@@ -587,123 +580,6 @@
 											 class="mdc-card__action-icons"></div>
 									</div>
 								</div>
-								<div class="mdc-card book">
-									<a class="mdc-card__primary-action" href="/app/topics/dm">
-										<div class="mdc-card__media mdc-card__media--16-9 dm-image"></div>
-										<div class="book--content">
-											<h2 class="truncate book--title">Dermatology</h2>
-										</div>
-									</a>
-									<div class="mdc-card__actions">
-										<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-										<div
-										 class="mdc-card__action-icons"></div>
-								</div>
-							</div>
-							<div class="mdc-card book">
-								<a class="mdc-card__primary-action" href="/app/topics/en">
-									<div class="mdc-card__media mdc-card__media--16-9 en-image"></div>
-									<div class="book--content">
-										<h2 class="truncate book--title">Endocrinology and Metabolism</h2>
-									</div>
-								</a>
-								<div class="mdc-card__actions">
-									<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-									<div
-									 class="mdc-card__action-icons"></div>
-							</div>
-						</div>
-						<div class="mdc-card book">
-							<a class="mdc-card__primary-action" href="/app/topics/gi">
-								<div class="mdc-card__media mdc-card__media--16-9 gi-image"></div>
-								<div class="book--content">
-									<h2 class="truncate book--title">Gastroenterology and Hepatology</h2>
-								</div>
-							</a>
-							<div class="mdc-card__actions">
-								<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-								<div
-								 class="mdc-card__action-icons"></div>
-						</div>
-					</div>
-					<div class="mdc-card book">
-						<a class="mdc-card__primary-action" href="/app/topics/gm">
-							<div class="mdc-card__media mdc-card__media--16-9 gm-image"></div>
-							<div class="book--content">
-								<h2 class="truncate book--title">General Internal Medicine</h2>
-							</div>
-						</a>
-						<div class="mdc-card__actions">
-							<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-							<div
-							 class="mdc-card__action-icons"></div>
-					</div>
-			</div>
-			<div class="mdc-card book">
-				<a class="mdc-card__primary-action" href="/app/topics/ho">
-					<div class="mdc-card__media mdc-card__media--16-9 ho-image"></div>
-					<div class="book--content">
-						<h2 class="truncate book--title">Hematology and Oncology</h2>
-					</div>
-				</a>
-				<div class="mdc-card__actions">
-					<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-					<div
-					 class="mdc-card__action-icons"></div>
-			</div>
-		</div>
-		<div class="mdc-card book">
-			<a class="mdc-card__primary-action" href="/app/topics/id">
-				<div class="mdc-card__media mdc-card__media--16-9 id-image"></div>
-				<div class="book--content">
-					<h2 class="truncate book--title">Infectious Disease</h2>
-				</div>
-			</a>
-			<div class="mdc-card__actions">
-				<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-				<div
-				 class="mdc-card__action-icons"></div>
-		</div>
-	</div>
-	<div class="mdc-card book">
-		<a class="mdc-card__primary-action" href="/app/topics/np">
-			<div class="mdc-card__media mdc-card__media--16-9 np-image"></div>
-			<div class="book--content">
-				<h2 class="truncate book--title">Nephrology</h2>
-			</div>
-		</a>
-		<div class="mdc-card__actions">
-			<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-			<div
-			 class="mdc-card__action-icons"></div>
-	</div>
-	</div>
-	<div class="mdc-card book">
-		<a class="mdc-card__primary-action" href="/app/topics/nr">
-			<div class="mdc-card__media mdc-card__media--16-9 nr-image"></div>
-			<div class="book--content">
-				<h2 class="truncate book--title">Neurology</h2>
-			</div>
-		</a>
-		<div class="mdc-card__actions">
-			<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-			<div
-			 class="mdc-card__action-icons"></div>
-	</div>
-	</div>
-	<div class="mdc-card book">
-		<a class="mdc-card__primary-action" href="/app/topics/pm">
-			<div class="mdc-card__media mdc-card__media--16-9 pm-image"></div>
-			<div class="book--content">
-				<h2 class="truncate book--title">Pulmonary and Critical Care Medicine</h2>
-			</div>
-		</a>
-		<div class="mdc-card__actions">
-			<div class="mdc-card__action-buttons"><button class="btn btn-text ripple mdc-card__action mdc-card__action--button start mdc-ripple-upgraded" style="--mdc-ripple-fg-size:51.3375px; --mdc-ripple-fg-scale:1.96093;">Start <svg class="svg-icon svg-arrow-slim-right-circle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-arrow-slim-right-circle"></use></svg></button></div>
-			<div
-			 class="mdc-card__action-icons"></div>
-	</div>
-	</div>
 	<div class="mdc-card book">
 		<a class="mdc-card__primary-action" href="/app/topics/rm">
 			<div class="mdc-card__media mdc-card__media--16-9 rm-image"></div>
